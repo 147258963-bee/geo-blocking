@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GeoBlocking | Soluciones Tecnológicas de Vanguardia</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root {
+            --bg-dark: #12003d; /* Púrpura oscuro del logo */
+            --accent-cyan: #00e5ff; /* Cian del texto */
+            --grad-orange: linear-gradient(45deg, #ff4e50, #f9d423);
+            --grad-logo: linear-gradient(135deg, #ff3366, #ff9900);
+            --text-white: #ffffff;
+        }
+
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--bg-dark);
+            color: var(--text-white);
+            scroll-behavior: smooth;
+        }
+
+        /* --- Encabezado --- */
+        header {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            background: radial-gradient(circle at center, #240061 0%, #12003d 100%);
+            padding: 20px;
+        }
+
+        h1 {
+            font-size: 4rem;
+            margin-bottom: 10px;
+            background: linear-gradient(to right, var(--accent-cyan), #ff3366);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-transform: uppercase;
+            letter-spacing: 5px;
+        }
+
+        .subtitle { font-size: 1.5rem; opacity: 0.9; }
+
+        /* --- Sección Servicios --- */
+        .container { padding: 80px 10% ; }
+        .grid-services {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+            margin-top: 40px;
+        }
+
+        .card {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 30px;
+            border-radius: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: 0.3s;
+            backdrop-filter: blur(10px);
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            border-color: var(--accent-cyan);
+            box-shadow: 0 10px 30px rgba(0, 229, 255, 0.2);
+        }
+
+        .card i { font-size: 2.5rem; margin-bottom: 15px; color: var(--accent-cyan); }
+
+        /* --- Tecnologías (Skills) --- */
+        .tech-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            justify-content: center;
+        }
+
+        .tech-item {
+            background: var(--grad-logo);
+            padding: 8px 18px;
+            border-radius: 50px;
+            font-weight: bold;
+            font-size: 0.9rem;
+        }
+
+        /* --- Formulario --- */
+        .contact-form {
+            max-width: 600px;
+            margin: 0 auto;
+            background: rgba(255, 255, 255, 0.03);
+            padding: 40px;
+            border-radius: 20px;
+        }
+
+        input, textarea {
+            width: 100%;
+            padding: 15px;
+            margin-bottom: 20px;
+            background: rgba(0,0,0,0.3);
+            border: 1px solid #444;
+            color: white;
+            border-radius: 8px;
+        }
+
+        .btn-submit {
+            background: var(--grad-logo);
+            border: none;
+            padding: 15px 30px;
+            color: white;
+            font-weight: bold;
+            cursor: pointer;
+            width: 100%;
+            border-radius: 8px;
+            font-size: 1.1rem;
+        }
+
+        /* --- Botón WhatsApp --- */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background-color: #25d366;
+            color: white;
+            width: 60px;
+            height: 60px;
+            border-radius: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 30px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+            z-index: 100;
+        }
+
+        /* --- Footer --- */
+        footer {
+            background: #090025;
+            padding: 50px 10% 20px;
+            text-align: center;
+            border-top: 2px solid #240061;
+        }
+
+        .social-links a {
+            color: white;
+            font-size: 1.8rem;
+            margin: 0 15px;
+            transition: 0.3s;
+        }
+
+        .social-links a:hover { color: var(--accent-cyan); }
+    </style>
+</head>
+<body>
+
+    <a href="https://wa.me/56949818809" class="whatsapp-float" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <header>
+        <h1>GEO BLOCKING</h1>
+        <p class="subtitle">Elevando el software al siguiente nivel 🚀</p>
+    </header>
+
+    <div class="container">
+        <h2 style="text-align:center">Nuestros Servicios 🛠️</h2>
+        <div class="grid-services">
+            <div class="card">
+                <i class="fas fa-mobile-alt"></i>
+                <h3>Apps Móviles 📱</h3>
+                <p>Desarrollo nativo e híbrido con automatización avanzada.</p>
+            </div>
+            <div class="card">
+                <i class="fas fa-shopping-cart"></i>
+                <h3>E-commerce 🛒</h3>
+                <p>Carritos inteligentes y pagos directos con <b>Webpay</b> 💳.</p>
+            </div>
+            <div class="card">
+                <i class="fas fa-robot"></i>
+                <h3>Chatbots & BI 🤖</h3>
+                <p>Inteligencia de negocios y respuestas automáticas con biometría 🧬.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="container" style="background: rgba(255,255,255,0.02);">
+        <h2 style="text-align:center">Nuestro Stack Tecnológico 💻</h2>
+        <div class="tech-list">
+            <span class="tech-item">Python 🐍</span>
+            <span class="tech-item">Java ☕</span>
+            <span class="tech-item">C++ ⚙️</span>
+            <span class="tech-item">Kotlin 🤖</span>
+            <span class="tech-item">HTML 🌐</span>
+            <span class="tech-item">CSS 🎨</span>
+            <span class="tech-item">JavaScript ✨</span>
+            <span class="tech-item">MySQL 🐬</span>
+            <span class="tech-item">MongoDB 🍃</span>
+            <span class="tech-item">AWS ☁️</span>
+            <span class="tech-item">Android Studio 📱</span>
+            <span class="tech-item">Git 🌲</span>
+            <span class="tech-item">Power BI 📊</span>
+            <span class="tech-item">ETL/Pentaho 🔄</span>
+        </div>
+    </div>
+
+    <div class="container">
+        <h2 style="text-align:center">Contáctanos ✉️</h2>
+        <div class="contact-form">
+            <form action="https://formsubmit.co/geobloking@gmail.com" method="POST">
+                <input type="text" name="name" placeholder="Tu Nombre" required>
+                <input type="email" name="email" placeholder="Tu Correo" required>
+                <textarea name="message" rows="5" placeholder="Cuéntanos sobre tu proyecto..." required></textarea>
+                <button type="submit" class="btn-submit">Enviar Mensaje Futurista 🚀</button>
+            </form>
+        </div>
+    </div>
+
+    <footer>
+        <p><b>GeoBlocking</b> - Innovación constante</p>
+        <p>📍 geobloking@gmail.com | 📞 +56949818809</p>
+        <div class="social-links">
+            <a href="mailto:geobloking@gmail.com"><i class="fas fa-envelope"></i></a>
+            <a href="https://instagram.com/geobloking" target="_blank"><i class="fab fa-instagram"></i></a>
+            <a href="https://wa.me/56949818809" target="_blank"><i class="fab fa-whatsapp"></i></a>
+        </div>
+        <p style="margin-top:20px; font-size: 0.8rem; opacity: 0.5;">© 2024 GeoBlocking. Todos los derechos reservados.</p>
+    </footer>
+
+</body>
+</html>
