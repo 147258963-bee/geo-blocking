@@ -3,209 +3,63 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Geo Blocking | Software & Landing Pages</title>
+    <title>Geo Blocking | Landing Pages & Software</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
         :root {
-            --azul-oscuro: #0a0033;
-            --degradado: linear-gradient(45deg, #ff8c00, #e91e63);
-            --cian: #00e5ff;
-            --blanco: #ffffff;
-            --whatsapp: #25d366;
+            --bg: #0a0033;
+            --grad: linear-gradient(45deg, #ff8c00, #e91e63);
+            --cyan: #00e5ff;
         }
-
-        body {
-            margin: 0;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: var(--azul-oscuro);
-            color: var(--blanco);
-            line-height: 1.6;
-        }
-
-        /* Cabecera */
-        header {
-            padding: 15px 5%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            background: rgba(0, 0, 0, 0.7);
-            backdrop-filter: blur(10px);
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-        }
-
-        .logo-box { display: flex; align-items: center; gap: 15px; }
+        body { margin: 0; font-family: 'Segoe UI', sans-serif; background: var(--bg); color: white; line-height: 1.6; }
+        header { padding: 15px 5%; display: flex; align-items: center; gap: 15px; background: rgba(0,0,0,0.6); backdrop-filter: blur(10px); position: sticky; top: 0; z-index: 1000; }
         .logo-img { height: 50px; border-radius: 5px; }
-        .brand { font-weight: bold; color: var(--cian); font-size: 1.4rem; }
-
-        /* Hero Principal */
-        .hero {
-            text-align: center;
-            padding: 100px 20px;
-            background: radial-gradient(circle, #1a0066 0%, #0a0033 100%);
-        }
-
-        .hero h1 {
-            font-size: 3.2rem;
-            margin-bottom: 20px;
-            background: var(--degradado);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-
-        /* Servicios / Landing Pages */
-        .servicios-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-            gap: 25px;
-            padding: 50px 5%;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .tarjeta {
-            background: rgba(255, 255, 255, 0.05);
-            padding: 35px;
-            border-radius: 20px;
-            text-align: center;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            transition: 0.4s;
-        }
-
-        .tarjeta:hover {
-            transform: translateY(-10px);
-            border-color: var(--cian);
-            box-shadow: 0 10px 30px rgba(0, 229, 255, 0.1);
-        }
-
-        .tarjeta i { font-size: 3rem; color: var(--cian); margin-bottom: 20px; display: block; }
-
-        /* Formulario de Contacto (Formspree) */
-        .seccion-contacto {
-            padding: 60px 5%;
-            background: rgba(0,0,0,0.3);
-            max-width: 600px;
-            margin: 50px auto;
-            border-radius: 30px;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-        }
-
-        .form-contacto { display: flex; flex-direction: column; gap: 15px; }
-        .form-contacto input, .form-contacto textarea {
-            padding: 15px;
-            border-radius: 12px;
-            border: 1px solid rgba(255,255,255,0.1);
-            background: rgba(255,255,255,0.05);
-            color: white;
-            font-size: 1rem;
-        }
-
-        .boton-enviar {
-            background: var(--degradado);
-            color: white;
-            border: none;
-            padding: 18px;
-            border-radius: 12px;
-            font-weight: bold;
-            cursor: pointer;
-            font-size: 1.1rem;
-            transition: 0.3s;
-        }
-
-        .boton-enviar:hover { opacity: 0.9; transform: scale(1.02); }
-
-        /* Botón WhatsApp Flotante */
-        .wa-flotante {
-            position: fixed;
-            bottom: 30px;
-            right: 30px;
-            background-color: var(--whatsapp);
-            color: white;
-            width: 65px;
-            height: 65px;
-            border-radius: 50px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 35px;
-            text-decoration: none;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.5);
-            z-index: 2000;
-            transition: 0.3s;
-        }
-
-        .wa-flotante:hover { transform: scale(1.1); }
-
-        /* Footer */
-        footer {
-            text-align: center;
-            padding: 50px 20px;
-            background: #05001a;
-            border-top: 1px solid rgba(255,255,255,0.05);
-        }
+        .hero { text-align: center; padding: 80px 20px; background: radial-gradient(circle, #1a0066, #0a0033); }
+        .hero h1 { font-size: 3rem; background: var(--grad); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .services { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 25px; padding: 40px 5%; }
+        .card { background: rgba(255,255,255,0.05); padding: 30px; border-radius: 20px; text-align: center; border: 1px solid rgba(255,255,255,0.1); transition: 0.3s; }
+        .card:hover { transform: translateY(-10px); border-color: var(--cyan); }
+        .card i { font-size: 3rem; color: var(--cyan); margin-bottom: 20px; display: block; }
+        .contact-box { max-width: 550px; margin: 40px auto; background: rgba(0,0,0,0.3); padding: 30px; border-radius: 25px; border: 1px solid rgba(255,255,255,0.1); }
+        .contact-form input, .contact-form textarea { width: 100%; padding: 15px; margin-bottom: 15px; border-radius: 10px; border: none; background: rgba(255,255,255,0.1); color: white; box-sizing: border-box; }
+        .btn-send { width: 100%; padding: 18px; border-radius: 10px; border: none; background: var(--grad); color: white; font-weight: bold; cursor: pointer; }
+        .wa-float { position: fixed; bottom: 30px; right: 30px; background: #25d366; color: white; width: 65px; height: 65px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 35px; text-decoration: none; box-shadow: 0 4px 15px rgba(0,0,0,0.4); z-index: 2000; }
+        footer { text-align: center; padding: 40px; background: #05001a; }
     </style>
 </head>
 <body>
-
-    <a href="https://wa.me/56949818809?text=Hola%20Geo%20Blocking,%20necesito%20información%20sobre%20Landing%20Pages." class="wa-flotante" target="_blank">
-        <i class="fab fa-whatsapp"></i>
-    </a>
-
+    <a href="https://wa.me/56949818809?text=Hola%20Geo%20Blocking,%20quiero%20cotizar%20una%20Landing%20Page." class="wa-float" target="_blank"><i class="fab fa-whatsapp"></i></a>
+    
     <header>
-        <div class="logo-box">
-            <img src="logo.png" alt="Geo Blocking Logo" class="logo-img">
-            <span class="brand">GEO BLOCKING</span>
-        </div>
+        <img src="logo.png" alt="Geo Blocking Logo" class="logo-img">
+        <span style="font-weight: bold; color: var(--cyan); font-size: 1.5rem;">GEO BLOCKING</span>
     </header>
 
     <section class="hero">
         <h1>Geo Blocking Software</h1>
-        <p>Expertos en Landing Pages y Automatización Inteligente 🚀</p>
+        <p>Expertos en Landing Pages y Automatización 🚀</p>
     </section>
 
-    <section class="servicios-container">
-        <div class="tarjeta">
-            <i class="fas fa-laptop-code"></i>
-            <h3>Landing Pages</h3>
-            <p>Diseñamos sitios web rápidos y optimizados para vender tu producto o servicio.</p>
-        </div>
-        <div class="tarjeta">
-            <i class="fas fa-robot"></i>
-            <h3>Chatbots IA</h3>
-            <p>Automatizamos tu atención al cliente con inteligencia artificial 24/7.</p>
-        </div>
-        <div class="tarjeta">
-            <i class="fas fa-mobile-alt"></i>
-            <h3>Apps Móviles</h3>
-            <p>Creamos aplicaciones personalizadas para Android e iOS.</p>
-        </div>
-        <div class="tarjeta">
-            <i class="fas fa-fingerprint"></i>
-            <h3>Biometría</h3>
-            <p>Seguridad avanzada con sistemas de reconocimiento facial y dactilar.</p>
-        </div>
+    <section class="services">
+        <div class="card"><i class="fas fa-laptop-code"></i><h3>Landing Pages</h3><p>Diseños rápidos y modernos.</p></div>
+        <div class="card"><i class="fas fa-mobile-alt"></i><h3>Apps Móviles</h3><p>iOS y Android nativo.</p></div>
+        <div class="card"><i class="fas fa-robot"></i><h3>Chatbots</h3><p>Automatización 24/7.</p></div>
+        <div class="card"><i class="fas fa-fingerprint"></i><h3>Biometría</h3><p>Seguridad avanzada.</p></div>
     </section>
 
-    <section class="seccion-contacto">
-        <h2 style="text-align: center; margin-bottom: 30px;">Solicitar Presupuesto 📩</h2>
-        <form action="https://formspree.io/f/geobloking@gmail.com" method="POST" class="form-contacto">
+    <section class="contact-box">
+        <h2 style="text-align: center;">Solicitar Presupuesto 📩</h2>
+        <form action="https://formspree.io/f/geobloking@gmail.com" method="POST" class="contact-form">
             <input type="text" name="nombre" placeholder="Nombre Completo" required>
-            <input type="email" name="email" placeholder="Correo de contacto" required>
-            <textarea name="mensaje" rows="5" placeholder="Cuéntanos sobre tu proyecto o Landing Page..." required></textarea>
-            <button type="submit" class="boton-enviar">Enviar al Correo de Geo Blocking</button>
+            <input type="email" name="email" placeholder="Correo" required>
+            <textarea name="mensaje" rows="4" placeholder="Háblanos de tu proyecto..." required></textarea>
+            <button type="submit" class="btn-send">Enviar al Correo</button>
         </form>
     </section>
 
     <footer>
-        <p><i class="fas fa-envelope"></i> geobloking@gmail.com</p>
-        <p><i class="fas fa-phone"></i> +56 9 4981 8809</p>
-        <div style="margin-top: 20px;">
-            <a href="https://instagram.com/geobloking" style="color: white; font-size: 1.5rem; margin: 0 15px;"><i class="fab fa-instagram"></i></a>
-            <a href="https://wa.me/56949818809" style="color: white; font-size: 1.5rem; margin: 0 15px;"><i class="fab fa-whatsapp"></i></a>
-        </div>
-        <p style="font-size: 0.8rem; opacity: 0.4; margin-top: 30px;">© 2024 Geo Blocking - Innovación y Desarrollo.</p>
+        <p>geobloking@gmail.com | +56 9 4981 8809</p>
+        <p style="opacity: 0.4; font-size: 0.8rem;">© 2024 Geo Blocking</p>
     </footer>
-
 </body>
 </html>
