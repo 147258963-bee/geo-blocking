@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Geo Blocking | Software & Automation</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Orbitron:wght@500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        :root {
+            /* Colores basados en tu Logo */
+            --bg-dark: #120a2e; /* Fondo profundo */
+            --logo-cyan: #00d2e8; /* Color de 'GEO BLOCKING' */
+            --logo-orange: #ff4d2d; /* Inicio degradado V */
+            --logo-pink: #d81b60; /* Fin degradado V */
+            --glass: rgba(255, 255, 255, 0.05);
+            --gradient-v: linear-gradient(135deg, var(--logo-orange), var(--logo-pink));
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-dark);
+            color: white;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        #particles-js {
+            position: fixed; width: 100%; height: 100%; z-index: -1;
+        }
+
+        header {
+            height: 80vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            background: radial-gradient(circle at center, rgba(0, 210, 232, 0.1) 0%, transparent 70%);
+        }
+
+        .hero-title {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 4rem;
+            letter-spacing: 5px;
+            background: linear-gradient(to right, white, var(--logo-cyan));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 10px;
+        }
+
+        .container { max-width: 1200px; margin: 0 auto; padding: 40px 20px; }
+
+        h2 {
+            font-family: 'Orbitron', sans-serif;
+            color: var(--logo-cyan);
+            text-align: center;
+            margin-bottom: 50px;
+            font-size: 2rem;
+        }
+
+        /* Grid de Servicios Profesional */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+        }
+
+        .service-card {
+            background: var(--glass);
+            padding: 40px;
+            border-radius: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            transition: 0.4s ease;
+            text-align: left;
+        }
+
+        .service-card:hover {
+            border-color: var(--logo-cyan);
+            transform: translateY(-10px);
+            background: rgba(0, 210, 232, 0.05);
+        }
+
+        .service-card i {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            background: var(--gradient-v);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        /* Stack de Tecnologías con Emojis */
+        .tech-section {
+            background: rgba(0,0,0,0.3);
+            padding: 60px 20px;
+            border-radius: 30px;
+            margin: 60px 0;
+        }
+
+        .tech-tag {
+            display: inline-block;
+            background: var(--glass);
+            padding: 8px 18px;
+            border-radius: 50px;
+            margin: 5px;
+            font-size: 0.9rem;
+            border: 1px solid rgba(0, 210, 232, 0.3);
+        }
+
+        /* Formulario Estilizado */
+        .contact-flex {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 40px;
+            background: var(--glass);
+            padding: 40px;
+            border-radius: 20px;
+        }
+
+        .contact-form { flex: 2; min-width: 300px; }
+        .contact-info { flex: 1; min-width: 250px; }
+
+        input, textarea {
+            width: 100%;
+            padding: 15px;
+            margin-bottom: 20px;
+            background: rgba(0,0,0,0.2);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            color: white;
+            border-radius: 10px;
+        }
+
+        .btn-submit {
+            background: var(--gradient-v);
+            color: white;
+            padding: 15px 40px;
+            border: none;
+            border-radius: 10px;
+            font-weight: bold;
+            cursor: pointer;
+            text-transform: uppercase;
+            width: 100%;
+        }
+
+        /* Footer y Flotantes */
+        footer {
+            padding: 60px 0;
+            text-align: center;
+            border-top: 1px solid var(--glass);
+        }
+
+        .social-icons a {
+            color: white;
+            font-size: 1.5rem;
+            margin: 0 15px;
+            transition: 0.3s;
+        }
+
+        .social-icons a:hover { color: var(--logo-cyan); }
+
+        .whatsapp-btn {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: #25d366;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 30px;
+            color: white;
+            text-decoration: none;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+            z-index: 1000;
+        }
+
+    </style>
+</head>
+<body>
+
+<div id="particles-js"></div>
+
+<header>
+    <div class="hero-title">GEO BLOCKING</div>
+    <p style="font-size: 1.2rem; opacity: 0.8;">Software Factory & High-End Automation</p>
+</header>
+
+<div class="container">
+    
+    <section>
+        <h2>Soluciones de Ingeniería 🚀</h2>
+        <div class="services-grid">
+            <div class="service-card">
+                <i class="fas fa-mobile-alt"></i>
+                <h3>Apps Móviles 📱</h3>
+                <p>Desarrollo nativo de alto rendimiento para Android e iOS con automatización de procesos.</p>
+            </div>
+            <div class="service-card">
+                <i class="fas fa-credit-card"></i>
+                <h3>Pagos Directos 💳</h3>
+                <p>Integración experta de Webpay y carritos de e-commerce con flujos de pago optimizados.</p>
+            </div>
+            <div class="service-card">
+                <i class="fas fa-fingerprint"></i>
+                <h3>Biometría & Bots 🤖</h3>
+                <p>Chatbots inteligentes y sistemas biométricos para respuestas automáticas seguras.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="tech-section">
+        <h2>Stack Tecnológico 🛠️</h2>
+        <div>
+            <h3>Lenguajes & Backend</h3>
+            <span class="tech-tag">Python 🐍</span> <span class="tech-tag">Java ☕</span> 
+            <span class="tech-tag">C++ ⚙️</span> <span class="tech-tag">Kotlin 🤖</span>
+            <span class="tech-tag">HTML5 🌐</span> <span class="tech-tag">CSS3 🎨</span> 
+            <span class="tech-tag">JavaScript ✨</span>
+        </div>
+        <div style="margin-top:20px;">
+            <h3>Cloud & Data</h3>
+            <span class="tech-tag">AWS (RDS, IAM, CloudWatch) ☁️</span>
+            <span class="tech-tag">MySQL 🐬</span> <span class="tech-tag">MongoDB 🍃</span>
+            <span class="tech-tag">Power BI 📊</span> <span class="tech-tag">Pentaho (ETL) 🚀</span>
+        </div>
+    </section>
+
+    <section id="contacto">
+        <h2>Iniciemos tu Proyecto ✉️</h2>
+        <div class="contact-flex">
+            <div class="contact-form">
+                <form action="https://formsubmit.co/geobloking@gmail.com" method="POST">
+                    <input type="text" name="nombre" placeholder="Nombre completo" required>
+                    <input type="email" name="email" placeholder="Correo electrónico corporativo" required>
+                    <textarea name="mensaje" rows="5" placeholder="Cuéntanos sobre tu necesidad tecnológica..." required></textarea>
+                    <button type="submit" class="btn-submit">Enviar Solicitud</button>
+                </form>
+            </div>
+            <div class="contact-info">
+                <h3>Contacto Directo</h3>
+                <p style="margin-top:20px;"><i class="fas fa-envelope" style="color:var(--logo-cyan)"></i> geobloking@gmail.com</p>
+                <p><i class="fab fa-instagram" style="color:var(--logo-cyan)"></i> @geobloking</p>
+                <p><i class="fas fa-phone" style="color:var(--logo-cyan)"></i> +569 4981 8809</p>
+            </div>
+        </div>
+    </section>
+
+</div>
+
+<footer>
+    <div class="social-icons">
+        <a href="mailto:geobloking@gmail.com"><i class="fas fa-envelope"></i></a>
+        <a href="https://instagram.com/geobloking" target="_blank"><i class="fab fa-instagram"></i></a>
+        <a href="https://wa.me/56949818809" target="_blank"><i class="fab fa-whatsapp"></i></a>
+    </div>
+    <p style="margin-top: 20px; font-size: 0.8rem; opacity: 0.6;">© 2024 GEO BLOCKING. Todos los derechos reservados.</p>
+</footer>
+
+<a href="https://wa.me/56949818809" class="whatsapp-btn" target="_blank">
+    <i class="fab fa-whatsapp"></i>
+</a>
+
+<script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+<script>
+    particlesJS("particles-js", {
+        "particles": {
+            "number": { "value": 100, "density": { "enable": true, "value_area": 800 } },
+            "color": { "value": "#00d2e8" },
+            "shape": { "type": "circle" },
+            "opacity": { "value": 0.2 },
+            "size": { "value": 2 },
+            "line_linked": { "enable": true, "distance": 150, "color": "#00d2e8", "opacity": 0.1, "width": 1 },
+            "move": { "enable": true, "speed": 1.5, "direction": "none", "random": false, "straight": false, "out_mode": "out", "bounce": false }
+        },
+        "interactivity": {
+            "detect_on": "canvas",
+            "events": { "onhover": { "enable": true, "mode": "grab" }, "onclick": { "enable
