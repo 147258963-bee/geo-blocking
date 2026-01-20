@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Geo Blocking | Software & Automation</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-dark: #05001a;
+            --primary-orange: #ff8c00;
+            --primary-magenta: #ff0055;
+            --accent-cyan: #00f2ff;
+            --text-light: #ffffff;
+            --glass: rgba(255, 255, 255, 0.05);
+        }
+
+        * { box-sizing: border-box; }
+
+        body, html {
+            margin: 0;
+            padding: 0;
+            font-family: 'Roboto', sans-serif;
+            background-color: var(--bg-dark);
+            color: var(--text-light);
+            scroll-behavior: smooth;
+            overflow-x: hidden;
+        }
+
+        /* Fondo de Partículas */
+        #particles-js {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            top: 0;
+            left: 0;
+        }
+
+        /* Hero Section */
+        header {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            background: radial-gradient(circle at center, #1a0050 0%, #05001a 100%);
+        }
+
+        .phone-mockup {
+            width: 260px;
+            height: 500px;
+            border: 10px solid #222;
+            border-radius: 40px;
+            background: #000;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 0 0 40px var(--primary-magenta);
+            animation: dropIn 1.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            overflow: hidden;
+            position: relative;
+        }
+
+        @keyframes dropIn {
+            0% { transform: translateY(-1000px); opacity: 0; }
+            100% { transform: translateY(0); opacity: 1; }
+        }
+
+        .phone-screen {
+            font-family: 'Orbitron', sans-serif;
+            background: linear-gradient(45deg, var(--primary-orange), var(--primary-magenta));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-size: 1.8rem;
+            font-weight: bold;
+            text-align: center;
+        }
+
+        /* Secciones Generales */
+        section { padding: 100px 20px; max-width: 1200px; margin: auto; }
+        h2 { font-family: 'Orbitron', sans-serif; text-align: center; color: var(--accent-cyan); font-size: 2.2rem; margin-bottom: 50px; }
+
+        /* Grid de Servicios */
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
+        .card { 
+            background: var(--glass); padding: 30px; border-radius: 20px; 
+            border: 1px solid rgba(255,255,255,0.1); transition: 0.3s; text-align: center;
+            backdrop-filter: blur(5px);
+        }
+        .card:hover { transform: translateY(-10px); border-color: var(--primary-orange); }
+        .card-icon { font-size: 3rem; margin-bottom: 15px; display: block; }
+
+        /* Portafolio */
+        .project-card {
+            background: #0a0025; border-radius: 20px; padding: 25px;
+            border: 1px solid var(--accent-cyan); transition: 0.4s;
+        }
+        .project-card:hover { border-color: var(--primary-magenta); box-shadow: 0 0 20px rgba(255,0,85,0.3); }
+        .tag { font-size: 0.7rem; background: var(--primary-magenta); padding: 5px 10px; border-radius: 5px; }
+
+        /* Precios */
+        .pricing-grid { display: flex; flex-wrap: wrap; justify-content: center; gap: 30px; }
+        .price-card { 
+            background: var(--glass); padding: 40px; border-radius: 25px; 
+            width: 320px; text-align: center; border: 1px solid rgba(255,255,255,0.1);
+        }
+        .price-card.featured { border: 2px solid var(--primary-orange); transform: scale(1.05); }
+        .price { font-size: 2.5rem; color: var(--accent-cyan); margin: 20px 0; }
+
+        /* Stack */
+        .tech-container { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; }
+        .badge { background: #111; border: 1px solid var(--primary-orange); padding: 8px 15px; border-radius: 20px; font-size: 0.85rem; }
+
+        /* Formulario */
+        .contact-form { max-width: 600px; margin: auto; background: var(--glass); padding: 40px; border-radius: 20px; }
+        input, textarea { width: 100%; padding: 15px; margin-bottom: 20px; border-radius: 8px; border: 1px solid #333; background: #000; color: #fff; }
+        button { width: 100%; padding: 15px; background: linear-gradient(45deg, var(--primary-orange), var(--primary-magenta)); border: none; color: white; font-weight: bold; border-radius: 8px; cursor: pointer; font-family: 'Orbitron'; }
+
+        /* Footer */
+        footer { background: #02000a; padding: 50px 20px; text-align: center; border-top: 2px solid var(--primary-magenta); }
+        .social a { color: var(--text-light); margin: 0 15px; text-decoration: none; font-size: 1.5rem; }
+
+        /* Botón WhatsApp */
+        .btn-ws { position: fixed; bottom: 30px; right: 30px; background: #25d366; color: white; width: 60px; height: 60px; border-radius: 50%; display: flex; justify-content: center; align-items: center; text-decoration: none; font-size: 2rem; z-index: 100; box-shadow: 0 5px 15px rgba(0,0,0,0.5); }
+    </style>
+</head>
+<body>
+
+    <div id="particles-js"></div>
+
+    <header>
+        <div class="phone-mockup">
+            <div class="phone-screen">GEO<br>BLOCKING<br>🤖</div>
+        </div>
+        <h1 style="font-family:'Orbitron'; margin-top:30px;">FUTURE TECH SOLUTIONS</h1>
+    </header>
+
+    <section id="servicios">
+        <h2>Servicios Tech ⚡</h2>
+        <div class="grid">
+            <div class="card"><span class="card-icon">📱</span><h3>Apps Móviles</h3><p>iOS/Android automatizadas.</p></div>
+            <div class="card"><span class="card-icon">💳</span><h3>Webpay Pago</h3><p>Integración ecommerce directa.</p></div>
+            <div class="card"><span class="card-icon">💬</span><h3>ChatBots 24/7</h3><p>IA con respuesta automática.</p></div>
+            <div class="card"><span class="card-icon">🕵️</span><h3>Biometría</h3><p>Reconocimiento facial avanzado.</p></div>
+        </div>
+    </section>
+
+    <section id="portafolio">
+        <h2>Portafolio Pro 🚀</h2>
+        <div class="grid">
+            <div class="project-card">
+                <span class="tag">Éxito</span>
+                <h3>Auto-Commerce Bot</h3>
+                <p>Bot que vende y cobra solo por WhatsApp.</p>
+                <small>Python | JavaScript | Webpay</small>
+            </div>
+            <div class="project-card">
+                <span class="tag">Cloud</span>
+                <h3>Cloud Sync Biométrico</h3>
+                <p>Acceso facial sincronizado en AWS.</p>
+                <small>Kotlin | AWS | MongoDB</small>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <h2>Nuestra Tecnología 💻</h2>
+        <div class="tech-container">
+            <span class="badge">🐍 Python</span> <span class="badge">☕ Java</span>
+            <span class="badge">⚙️ C++</span> <span class="badge">🤖 Kotlin
