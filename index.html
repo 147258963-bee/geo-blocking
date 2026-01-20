@@ -1,0 +1,162 @@
+<<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Geo Blocking | Expert Tech Hub</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600;800&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --bg: #070314;
+            --cyan: #00d2e8;
+            --orange: #ff4d2d;
+            --pink: #d81b60;
+            --glass: rgba(255, 255, 255, 0.03);
+            --grad: linear-gradient(135deg, var(--orange), var(--pink));
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Inter', sans-serif; background: var(--bg); color: white; overflow-x: hidden; }
+
+        #particles-js { position: fixed; width: 100%; height: 100%; z-index: -1; }
+
+        header { height: 50vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; padding: 20px; }
+        .title { font-family: 'Orbitron'; font-size: clamp(1.5rem, 8vw, 3.5rem); color: var(--cyan); text-shadow: 0 0 20px var(--cyan); text-transform: uppercase; }
+
+        .container { max-width: 1000px; margin: 0 auto; padding: 20px; }
+        h2 { font-family: 'Orbitron'; color: var(--cyan); margin: 40px 0 20px; text-align: center; font-size: 1.4rem; }
+
+        /* Estilo de la Enciclopedia Tecnológica */
+        .tech-box { background: var(--glass); border: 1px solid rgba(0, 210, 232, 0.2); border-radius: 15px; padding: 25px; margin-bottom: 20px; backdrop-filter: blur(10px); transition: 0.3s; }
+        .tech-box:hover { border-color: var(--pink); box-shadow: 0 0 20px rgba(216, 27, 96, 0.2); }
+        .tech-item { margin-bottom: 15px; padding-bottom: 15px; border-bottom: 1px solid rgba(255,255,255,0.05); }
+        .tech-item:last-child { border: none; }
+        .tech-name { font-weight: 600; color: var(--cyan); display: flex; align-items: center; gap: 10px; margin-bottom: 5px; }
+        .tech-desc { font-size: 0.9rem; color: #ccc; line-height: 1.5; }
+
+        /* Formulario y Botones */
+        .contact-form { background: var(--glass); padding: 30px; border-radius: 20px; border: 1px solid var(--orange); }
+        input, textarea { width: 100%; padding: 12px; margin-bottom: 15px; background: rgba(0,0,0,0.3); border: 1px solid rgba(255,255,255,0.1); color: white; border-radius: 8px; }
+        .btn { background: var(--grad); border: none; padding: 15px; width: 100%; color: white; font-weight: bold; border-radius: 8px; cursor: pointer; text-transform: uppercase; }
+
+        footer { text-align: center; padding: 40px; border-top: 1px solid var(--glass); margin-top: 50px; }
+        .wsp { position: fixed; bottom: 20px; right: 20px; background: #25d366; width: 55px; height: 55px; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-size: 25px; text-decoration: none; z-index: 100; box-shadow: 0 0 15px #25d366; }
+    </style>
+</head>
+<body>
+
+<div id="particles-js"></div>
+
+<header>
+    <h1 class="title">GEO BLOCKING</h1>
+    <p style="opacity: 0.6; letter-spacing: 2px;">DOCUMENTACIÓN FULL STACK</p>
+</header>
+
+<div class="container">
+    
+    <h2>Lenguajes de Programación 💻</h2>
+    <div class="tech-box">
+        <div class="tech-item">
+            <div class="tech-name">Python 🐍</div>
+            <div class="tech-desc">Lenguaje versátil ideal para automatización, inteligencia artificial y backend robusto con sintaxis limpia.</div>
+        </div>
+        <div class="tech-item">
+            <div class="tech-name">Java ☕</div>
+            <div class="tech-desc">Estándar corporativo para aplicaciones empresariales escalables y seguras con alta eficiencia en backend.</div>
+        </div>
+        <div class="tech-item">
+            <div class="tech-name">C++ ⚙️</div>
+            <div class="tech-desc">Lenguaje de alto rendimiento para sistemas críticos que requieren control total sobre el hardware y memoria.</div>
+        </div>
+        <div class="tech-item">
+            <div class="tech-name">Kotlin (Android) 🤖</div>
+            <div class="tech-desc">Lenguaje moderno y conciso, optimizado por Google para el desarrollo de aplicaciones móviles nativas de alto impacto.</div>
+        </div>
+        <div class="tech-item">
+            <div class="tech-name">HTML 🌐</div>
+            <div class="tech-desc">La estructura fundamental de la web, permitiendo organizar el contenido de forma semántica y accesible.</div>
+        </div>
+        <div class="tech-item">
+            <div class="tech-name">CSS 🎨</div>
+            <div class="tech-desc">Lenguaje de diseño para dar estilo, animaciones y belleza visual a cualquier interfaz digital responsiva.</div>
+        </div>
+        <div class="tech-item">
+            <div class="tech-name">JavaScript ✨</div>
+            <div class="tech-desc">El motor de la interactividad web, permitiendo crear experiencias de usuario dinámicas y aplicaciones en tiempo real.</div>
+        </div>
+    </div>
+
+    <h2>Bases de Datos & Cloud ☁️</h2>
+    <div class="tech-box">
+        <div class="tech-item">
+            <div class="tech-name">MySQL 🐬</div>
+            <div class="tech-desc">Sistema relacional líder para gestionar grandes volúmenes de datos con total integridad y velocidad.</div>
+        </div>
+        <div class="tech-item">
+            <div class="tech-name">MongoDB 🍃</div>
+            <div class="tech-desc">Base de datos NoSQL basada en documentos, ideal para escalabilidad horizontal y datos no estructurados.</div>
+        </div>
+        <div class="tech-item">
+            <div class="tech-name">AWS (RDS, IAM, CloudWatch) ☁️</div>
+            <div class="tech-desc">Infraestructura en la nube para gestionar bases de datos, seguridad de identidades y monitoreo de sistemas en tiempo real.</div>
+        </div>
+    </div>
+
+    <h2>Herramientas & BI 📊</h2>
+    <div class="tech-box">
+        <div class="tech-item">
+            <div class="tech-name">Power BI 📊</div>
+            <div class="tech-desc">Inteligencia de negocios para transformar datos crudos en tableros visuales interactivos para la toma de decisiones.</div>
+        </div>
+        <div class="tech-item">
+            <div class="tech-name">Pentaho (Kettle) 🚀</div>
+            <div class="tech-desc">Poderosa herramienta de integración de datos (ETL) para mover y transformar información entre múltiples fuentes.</div>
+        </div>
+        <div class="tech-item">
+            <div class="tech-name">Android Studio 📱</div>
+            <div class="tech-desc">Entorno de desarrollo profesional para crear, probar y desplegar aplicaciones móviles de clase mundial.</div>
+        </div>
+        <div class="tech-item">
+            <div class="tech-name">UML & ETL 📐</div>
+            <div class="tech-desc">Modelado de sistemas complejos y procesos de extracción, transformación y carga de datos masivos.</div>
+        </div>
+        <div class="tech-item">
+            <div class="tech-name">Git & Excel 🌿📑</div>
+            <div class="tech-desc">Control de versiones colaborativo y gestión de datos tabulares para análisis rápido y organización de proyectos.</div>
+        </div>
+    </div>
+
+    <h2>Contacto ✉️</h2>
+    <form class="contact-form" action="https://formsubmit.co/geobloking@gmail.com" method="POST">
+        <input type="text" name="nombre" placeholder="Nombre" required>
+        <input type="email" name="email" placeholder="Correo" required>
+        <textarea name="msg" rows="4" placeholder="¿Cómo podemos ayudarte?" required></textarea>
+        <button type="submit" class="btn">Enviar a Geo Blocking</button>
+    </form>
+
+</div>
+
+<footer>
+    <p>geobloking@gmail.com | @geobloking</p>
+    <p style="margin-top: 10px; font-size: 0.8rem; opacity: 0.5;">+569 4981 8809 | Santiago, Chile</p>
+</footer>
+
+<a href="https://wa.me/56949818809" class="wsp" target="_blank"><i class="fab fa-whatsapp"></i></a>
+
+<script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+<script>
+    particlesJS("particles-js", {
+        "particles": {
+            "number": { "value": 70 },
+            "color": { "value": "#00d2e8" },
+            "opacity": { "value": 0.4 },
+            "size": { "value": 2 },
+            "line_linked": { "enable": true, "distance": 150, "color": "#00d2e8", "opacity": 0.2 },
+            "move": { "enable": true, "speed": 2 }
+        }
+    });
+</script>
+</body>
+</html>
