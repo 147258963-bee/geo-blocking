@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<!-- PROYECTO FULLSTACK UNIFICADO GEOBLOCKING
+Frontend + Backend + PWA + Chatbot Base
+Tecnologías: HTML, CSS, JS, Python (Flask)
+-->
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>GeoBlocking | Software & Automatización</title>
+
+  <!-- SEO -->
+  <meta name="description" content="GeoBlocking desarrolla software, apps móviles, automatización 24/7, chatbots, biometría facial, e-commerce y pagos WebPay.">
+
+  <!-- PWA -->
+  <link rel="manifest" href="manifest.json">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;800&display=swap" rel="stylesheet">
+
+  <!-- Particles -->
+  <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+
+  <style>
+    :root{
+      --bg:#1b1033;
+      --primary:#22d3c5;
+      --secondary:#ff8a3d;
+      --accent:#ff3d6e;
+      --text:#e6f1ff;
+    }
+    *{margin:0;padding:0;box-sizing:border-box;font-family:'Orbitron',sans-serif}
+    body{background:var(--bg);color:var(--text);overflow-x:hidden}
+    #particles-js{position:fixed;width:100%;height:100%;z-index:-1}
+
+    header{min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:2rem}
+    header img{width:140px;margin-bottom:1rem}
+    header h1{font-size:clamp(2.2rem,6vw,4rem);animation:drop 1.2s ease}
+    header p{max-width:760px;margin-top:1rem}
+
+    @keyframes drop{from{transform:translateY(-80px);opacity:0}to{transform:translateY(0);opacity:1}}
+
+    section{padding:4rem 8%}
+    h2{text-align:center;font-size:2.2rem;margin-bottom:3rem;color:var(--primary)}
+
+    .services{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:2rem}
+    .card{background:rgba(255,255,255,.06);border-radius:20px;padding:2rem;backdrop-filter:blur(12px);transition:.4s}
+    .card:hover{transform:translateY(-10px);box-shadow:0 0 35px rgba(34,211,197,.25)}
+    .card span{font-size:2.2rem}
+    .card h3{margin:1rem 0;color:var(--secondary)}
+
+    form{max-width:620px;margin:auto;display:grid;gap:1rem}
+    input,textarea,button{padding:1rem;border-radius:10px;border:none}
+    input,textarea{background:#2a1a4d;color:white}
+    button{background:linear-gradient(135deg,var(--secondary),var(--accent));color:white;font-weight:600;cursor:pointer}
+
+    footer{background:#120826;padding:2rem;text-align:center}
+    footer a{color:var(--primary);margin:0 .5rem}
+
+    .whatsapp{position:fixed;right:20px;bottom:20px;background:#25d366;width:60px;height:60px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:2rem;color:white;z-index:10}
+  </style>
+</head>
+<body>
+<div id="particles-js"></div>
+
+<header>
+  <img src="logo geobloking.jpeg" alt="GeoBlocking">
+  <h1>GeoBlocking Software & Automatización</h1>
+  <p>Automatizamos negocios con software, apps móviles, pagos WebPay, e-commerce, chatbots 24/7 y biometría facial.</p>
+</header>
+
+<section>
+<h2>🚀 Servicios</h2>
+<div class="services">
+<div class="card"><span>📱</span><h3>Apps Móviles</h3><p>Kotlin Android y automatización.</p></div>
+<div class="card"><span>🤖</span><h3>Chatbots 24/7</h3><p>WhatsApp y Web automatizado.</p></div>
+<div class="card"><span>💳</span><h3>Pagos WebPay</h3><p>Integración segura.</p></div>
+<div class="card"><span>🛒</span><h3>E-commerce</h3><p>Carritos inteligentes.</p></div>
+<div class="card"><span>🧠</span><h3>Biometría Facial</h3><p>Identidad digital.</p></div>
+<div class="card"><span>🌐</span><h3>Landing Pages</h3><p>Alta conversión.</p></div>
+</div>
+</section>
+
+<section>
+<h2>📩 Contacto Automático</h2>
+<form id="contactForm">
+<input type="text" placeholder="Nombre" required>
+<input type="email" placeholder="Correo" required>
+<textarea placeholder="Mensaje" required></textarea>
+<button type="submit">Enviar</button>
+</form>
+</section>
+
+<footer>
+<p>📧 geobloking@gmail.com</p>
+<p>
+<a href="https://wa.me/56949818809">WhatsApp</a>|
+<a href="https://instagram.com/geobloking">Instagram</a>
+</p>
+<p>© 2026 GeoBlocking</p>
+</footer>
+
+<a class="whatsapp" href="https://wa.me/56949818809">💬</a>
+
+<script>
+particlesJS('particles-js',{
+ particles:{number:{value:60},size:{value:2},move:{speed:1},line_linked:{enable:true,color:'#22d3c5'}},
+ interactivity:{events:{onhover:{enable:true,mode:'repulse'}}}
+});
+
+// Formulario conectado a backend
+ document.getElementById('contactForm').addEventListener('submit',e=>{
+ e.preventDefault();
+ fetch('/contact',{method:'POST'}).then(()=>alert('Mensaje enviado correctamente'));
+});
+</script>
+
+<!-- BACKEND PYTHON (Flask) - guardar como app.py -->
+<!--
+from flask import Flask, request
+from flask_mail import Mail, Message
+
+app = Flask(__name__)
+app.config.update(
+ MA
