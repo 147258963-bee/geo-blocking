@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Geo Blocking | Moda Sin Fronteras</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        .gradient-text {
+            background: linear-gradient(90deg, #FF4B2B, #FF00CC);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .bg-dark-navy { background-color: #0A0A23; }
+        .bg-accent-cyan { background-color: #00D2FF; }
+    </style>
+</head>
+<body class="bg-dark-navy text-white font-sans">
+
+    <nav class="flex justify-between items-center p-6 bg-black/30 backdrop-blur-md sticky top-0 z-50">
+        <div class="flex items-center gap-2">
+            <img src="https://i.imgur.com/tu-logo-aqui.png" alt="Logo" class="h-10"> <span class="font-bold text-xl tracking-tighter">GEO <span class="text-cyan-400">BLOCKING</span></span>
+        </div>
+        <div class="hidden md:flex gap-8 font-medium">
+            <a href="#" class="hover:text-cyan-400">Hombres</a>
+            <a href="#" class="hover:text-cyan-400">Mujeres</a>
+            <a href="#" class="hover:text-cyan-400">Catálogo</a>
+        </div>
+        <div class="flex gap-4 items-center">
+            <i class="fas fa-search cursor-pointer"></i>
+            <div class="relative">
+                <i class="fas fa-shopping-cart cursor-pointer text-xl"></i>
+                <span class="absolute -top-2 -right-2 bg-pink-600 text-xs rounded-full px-1.5">3</span>
+            </div>
+        </div>
+    </nav>
+
+    <header class="relative h-[70vh] flex items-center justify-center overflow-hidden">
+        <div class="absolute inset-0 bg-gradient-to-r from-black/70 to-transparent z-10"></div>
+        <img src="https://images.unsplash.com/photo-1558769132-cb1aea458c5e" class="absolute inset-0 w-full h-full object-cover" alt="Hero">
+        <div class="relative z-20 text-center px-4">
+            <h1 class="text-5xl md:text-7xl font-black mb-4">MODA SIN FRONTERAS</h1>
+            <p class="text-xl md:text-2xl font-light mb-8">Estilo sin límites. Envíos geolocalizados en tiempo real.</p>
+            <button class="bg-cyan-500 hover:bg-cyan-400 text-black font-bold py-4 px-10 rounded-full transition-all transform hover:scale-105">
+                VER CATÁLOGO DIGITAL
+            </button>
+        </div>
+    </header>
+
+    <section class="p-10">
+        <h2 class="text-3xl font-bold mb-10 border-l-4 border-pink-500 pl-4">NUESTROS DESTACADOS</h2>
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+            <div class="bg-gray-900 rounded-xl overflow-hidden hover:shadow-2xl hover:shadow-cyan-500/20 transition-all">
+                <img src="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab" class="w-full h-64 object-cover" alt="T-Shirt">
+                <div class="p-4">
+                    <h3 class="font-bold">Neo-Cyber Tee</h3>
+                    <p class="text-cyan-400 font-bold mt-2">$24.990</p>
+                    <button class="w-full mt-4 bg-white text-black py-2 rounded font-bold hover:bg-gray-200">Añadir al Carrito</button>
+                </div>
+            </div>
+            </div>
+    </section>
+
+    <section class="bg-black/50 p-10">
+        <div class="flex flex-col md:flex-row gap-10">
+            <div class="flex-1">
+                <h2 class="text-3xl font-bold mb-4">MAPA DE COBERTURA</h2>
+                <p class="mb-6 text-gray-400">Rastrea tu pedido o encuentra puntos de retiro cercanos.</p>
+                <div class="bg-gray-800 h-[400px] rounded-2xl flex items-center justify-center overflow-hidden">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d13313.116!2d-70.65!3d-33.45!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1ses!2scl!4v1634567890" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                </div>
+            </div>
+            <div class="md:w-1/3">
+                <h2 class="text-3xl font-bold mb-4">STREET STYLE</h2>
+                <div class="grid grid-cols-2 gap-2">
+                    <img src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f" class="rounded-lg h-32 w-full object-cover">
+                    <img src="https://images.unsplash.com/photo-1529139572177-393fbf05031c" class="rounded-lg h-32 w-full object-cover">
+                </div>
+                <div class="mt-6 p-6 bg-gradient-to-br from-pink-600 to-orange-500 rounded-2xl">
+                    <p class="font-bold italic">"La mejor calidad que he encontrado en Santiago."</p>
+                    <p class="text-sm mt-2">- @user_geo</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="p-10 border-t border-white/10 text-center">
+        <div class="flex justify-center gap-6 mb-8 text-2xl opacity-50">
+            <i class="fab fa-cc-visa"></i>
+            <i class="fab fa-cc-mastercard"></i>
+            <span class="text-sm font-bold border px-2 rounded">WEBPAY</span>
+        </div>
+        <p class="text-gray-500">© 2024 GEO BLOCKING. Todos los derechos reservados.</p>
+    </footer>
+
+    <div class="fixed bottom-6 right-6 bg-cyan-500 p-4 rounded-full shadow-lg cursor-pointer animate-bounce">
+        <i class="fas fa-comment-dots text-2xl text-black"></i>
+    </div>
+
+</body>
+</html>
