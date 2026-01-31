@@ -1,0 +1,120 @@
+<div class="fixed bottom-10 right-10 z-[300] flex flex-col items-end gap-4">
+    
+    <div id="ws-container" class="ws-panel flex flex-col gap-3 mb-2 items-end">
+        <a href="https://wa.me/56949818809" target="_blank" class="glass-industrial px-6 py-3 rounded-sm flex items-center border-l-4 border-cyan-500 hover:bg-cyan-500/10 transition w-64">
+            <div class="text-right mr-4 flex-1">
+                <p class="text-[10px] font-bold text-white uppercase tracking-widest">Victor Donoso</p>
+                <p class="text-[9px] text-cyan-400 font-mono">CEO / Arquitecto</p>
+            </div>
+            <i class="fab fa-whatsapp text-green-500 text-xl"></i>
+        </a>
+        <a href="https://wa.me/56945979537" target="_blank" class="glass-industrial px-6 py-3 rounded-sm flex items-center border-l-4 border-blue-500 hover:bg-blue-500/10 transition w-64">
+            <div class="text-right mr-4 flex-1">
+                <p class="text-[10px] font-bold text-white uppercase tracking-widest">Williams Hernández</p>
+                <p class="text-[9px] text-blue-400 font-mono">Co-CEO / Operaciones</p>
+            </div>
+            <i class="fab fa-whatsapp text-green-500 text-xl"></i>
+        </a>
+    </div>
+
+    <div id="chat-box" class="hidden flex-col bg-[#050507] border border-white/10 w-80 md:w-96 h-[500px] shadow-2xl overflow-hidden glass-industrial mb-4">
+        <div class="p-4 border-b border-white/5 flex justify-between items-center bg-black/40">
+            <div class="flex items-center gap-3">
+                <div class="w-2 h-2 bg-cyan-400 rounded-full animate-pulse"></div>
+                <span class="text-[10px] font-bold tracking-[0.2em] uppercase mono text-cyan-400">EMSA Neural Bot</span>
+            </div>
+            <button onclick="toggleChat()" class="text-gray-600 hover:text-white transition text-xs"><i class="fas fa-times"></i></button>
+        </div>
+        
+        <div id="chat-msgs" class="flex-1 p-6 overflow-y-auto text-[12px] text-gray-400 space-y-4 font-mono">
+            <div class="border-l-2 border-cyan-500/30 pl-3 py-1">
+                <p class="text-white mb-1">> SYSTEM_READY</p>
+                <p>> Consultoría técnica GeoBlocking activa. ¿En qué módulo puedo asistirle hoy?</p>
+            </div>
+        </div>
+        
+        <div class="p-4 border-t border-white/5 flex gap-3 bg-black/20">
+            <input id="chat-input" type="text" class="flex-1 bg-transparent border-b border-white/10 p-1 outline-none text-[10px] text-white mono uppercase focus:border-cyan-500" placeholder="Comando..." onkeypress="if(event.key==='Enter') sendMsg()">
+            <button onclick="sendMsg()" class="text-cyan-500"><i class="fas fa-chevron-right"></i></button>
+        </div>
+    </div>
+
+    <div class="flex gap-4">
+        <button onclick="toggleChat()" class="flex flex-col items-center group">
+            <div class="bot-core !w-14 !h-14">
+                <i class="fas fa-brain text-white text-lg"></i>
+            </div>
+        </button>
+
+        <button onclick="toggleWS()" class="w-14 h-14 bg-white flex items-center justify-center text-2xl text-black hover:scale-105 transition-all shadow-xl">
+            <i class="fab fa-whatsapp"></i>
+        </button>
+    </div>
+</div>
+
+<script>
+    function toggleWS() {
+        document.getElementById('ws-container').classList.toggle('ws-active');
+    }
+
+    function toggleChat() {
+        const cb = document.getElementById('chat-box');
+        cb.style.display = (cb.style.display === 'flex') ? 'none' : 'flex';
+    }
+
+    function getReasonedResponse(input) {
+        const val = input.toLowerCase();
+        
+        // Base de conocimientos extendida
+        const responses = {
+            tecnologia: ["biometria", "rostro", "huella", "seguridad", "identidad"],
+            data: ["pentaho", "kettle", "etl", "datos", "power bi", "analytics", "sql"],
+            pagos: ["webpay", "transbank", "pagos", "ecommerce", "pasarela", "checkout"],
+            empresa: ["quienes", "geoblocking", "donde", "equipo", "experiencia"],
+            contacto: ["precio", "costo", "cotizar", "presupuesto", "hablar", "telefono", "mail"],
+            saludo: ["hola", "buenos dias", "buenas tardes", "saludos", "emsa"]
+        };
+
+        if (responses.tecnologia.some(k => val.includes(k))) 
+            return "ANALYSIS: Desplegamos motores biométricos con latencia < 200ms. Soportamos reconocimiento facial y dactilar integrado a bases de datos gubernamentales o privadas.";
+        
+        if (responses.data.some(k => val.includes(k))) 
+            return "DATA_ENGINEERING: Especialistas en Kettle (Pentaho). Automatizamos la extracción (ETL) desde orígenes legacy hacia data lakes modernos o dashboards en Power BI.";
+        
+        if (responses.pagos.some(k => val.includes(k))) 
+            return "FINTECH_LOG: Implementamos Webpay Plus con validación de transacciones en servidor. Seguridad garantizada mediante tokens dinámicos.";
+            
+        if (responses.contacto.some(k => val.includes(k))) 
+            return "REQUERIMIENTO: Para presupuestos, inicie un ticket en el formulario central o contacte directamente a la gerencia vía WhatsApp para una respuesta prioritaria.";
+
+        if (responses.empresa.some(k => val.includes(k))) 
+            return "GEO_INFO: GeoBlocking es una élite de ingeniería de software. Liderada por Victor Donoso y Williams Hernández, enfocada en soluciones críticas y alta disponibilidad.";
+
+        if (responses.saludo.some(k => val.includes(k))) 
+            return "GREETING: Conexión establecida. Soy EMSA. Estoy entrenado en: Biometría, Ingeniería de Datos (Pentaho) e Integraciones de Pago.";
+
+        return "UNKNOWN_COMMAND: El término no está en mi base de datos de ingeniería. Intente con: 'Biometría', 'Pentaho', 'Webpay' o 'Cotizar'.";
+    }
+
+    function sendMsg() {
+        const input = document.getElementById('chat-input');
+        const container = document.getElementById('chat-msgs');
+        const text = input.value.trim();
+        if(!text) return;
+
+        container.innerHTML += `<div class="text-right text-white/40 text-[9px] mt-4 uppercase">> ${text}</div>`;
+        input.value = "";
+        
+        const tId = "msg-" + Date.now();
+        container.innerHTML += `<div id="${tId}" class="text-cyan-500 animate-pulse text-[10px] mt-2">> PROCESANDO...</div>`;
+        container.scrollTop = container.scrollHeight;
+
+        setTimeout(() => {
+            const response = getReasonedResponse(text);
+            const loader = document.getElementById(tId);
+            if(loader) loader.remove();
+            container.innerHTML += `<div class="bg-white/5 border-l-2 border-cyan-500 p-3 text-cyan-400 mt-2 leading-tight">> ${response}</div>`;
+            container.scrollTop = container.scrollHeight;
+        }, 800);
+    }
+</script>
